@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -27,4 +28,9 @@ public class PersonDetailsService implements UserDetailsService {
         return new PersonDetailsImpl(person.get());
     }
 
+    @Transactional
+    public Person reg(Person person) {
+       return personRepository.save(person);
+    }
 }
+
