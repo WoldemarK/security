@@ -14,7 +14,7 @@ public class RegistrationService {
     private final PasswordEncoder passwordEncoder;
 
     @Transactional
-    public Person reg(Person person) {
+    public Person  registration(Person person) {
         person.setRole("ROLE_USER");
         person.setPassword(passwordEncoder.encode(person.getPassword()));
         return personRepository.save(person);

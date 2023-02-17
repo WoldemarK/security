@@ -22,6 +22,6 @@ public class AuthController {
 
     @PostMapping("/reg")
     public Person save(@RequestBody Person person) {
-        return this.service.reg(person);
+        return this.service.registration(person);
     }
 }
