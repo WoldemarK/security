@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -24,9 +25,13 @@ public class Person {
     @Column(name = "password")
     private String password;
 
-    public Person(String username, String password) {
+    @Column(name = "role")
+    private String role;
+
+    public Person(String username, String password,String role) {
         this.username = username;
         this.password = password;
+        this.role = role;
     }
 
     public Person() {
